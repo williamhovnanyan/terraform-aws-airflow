@@ -65,7 +65,7 @@ resource "aws_db_instance" "airflow-database" {
 resource "aws_db_subnet_group" "airflow_subnetgroup" {
   name        = "airflow-database-subnetgroup"
   description = "airflow database subnet group"
-  subnet_ids  = [ "${var.subnet_ids}" ]
+  subnet_ids  = "${var.subnet_ids}" 
 }
 
 resource "aws_security_group" "allow_airflow_database" {
