@@ -34,6 +34,7 @@ resource "aws_instance" "airflow_instance" {
 
     connection {
       user     = "centos"
+      host     = "${self.associate_public_ip_address}"
     }
   }
 
