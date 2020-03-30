@@ -4,7 +4,7 @@ data "template_file" "airflow_user_data" {
 
 data "template_file" "airflow_config" {
   template = "${file("${path.module}/files/airflow.cfg")}"
-  vars {
+  vars = {
     fernet_key = "${var.fernet_key}"
     db_url     = "${aws_db_instance.airflow-database.address}"
     db_pass    = "${aws_db_instance.airflow-database.password}"
