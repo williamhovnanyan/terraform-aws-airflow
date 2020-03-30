@@ -24,7 +24,7 @@ resource "aws_instance" "airflow_instance" {
     volume_size = 32
   }
 
-  tags {
+  tags = {
     Name = "airflow"
   }
 
